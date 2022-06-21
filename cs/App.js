@@ -1,22 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Switch } from 'react-native';
+import { SafeAreaView, StyleSheet, Switch, Text } from 'react-native';
+import { myColor } from './src/styles/color';
 import { ThemeContext } from './src/context/ThemeContext';
-import {myColor} from './src/styles/color';
+import Calculator from '../cs/src/components/Calculator';
 
 
 
 export default function App() {
-  const [theme, setTheme]=useState ('light');
+  const [theme, setTheme] = useState('light');
   return (
     <ThemeContext.Provider value={theme}>
-    <View style={theme==='light' ? styles.container:[styles.container, {backgroundColor:'#000'}]}>
-     
-      <StatusBar style="auto" />
-      <Switch 
-      value={theme==='light'}
-      onValueChange={() => setTheme(theme==='light'? 'dark': 'light')}/>
-    </View>
+      <SafeAreaView style={theme === 'light' ? styles.container : [styles.container, {backgroundColor: 'black'}]}>
+        <Switch
+          value={theme === 'dark'}
+          onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        />
+        <Calculator />
+      </SafeAreaView>
     </ThemeContext.Provider>
   );
 }
@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: myColor.light,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
 });
