@@ -6,6 +6,7 @@ export const Styles = StyleSheet.create({
     btnBlue: {
         width: 72,
         height: 72,
+       
         borderRadius: 24,
         backgroundColor: myColor.blue,
         justifyContent: "center",
