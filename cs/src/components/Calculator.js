@@ -1,8 +1,8 @@
-import  React from "react";
+import * as React from "react";
 import Button from "./Button";
 import { View, Text } from "react-native";
 import { Styles } from "../styles/GlobalStyles";
-import { myColor } from "../styles/Color";
+import { myColor } from "../styles/color";
 import { useState } from "react";
 export default function Calculator() {
   const [firstNumber, setFirstNumber] = useState("");
@@ -97,9 +97,9 @@ export default function Calculator() {
         {firstNumberDisplay()}
       </View>
       <View style={Styles.row}>
-        <Button title="C" isGray onPress={clear} />
-        <Button title="+/-" isGray onPress={() => handleOperationPress("+/-")} />
-        <Button title="％" isGray onPress={() => handleOperationPress("％")} />
+      <Button title="C" isGray onPress={clear} />
+        <Button title="00" isGray onPress={() => handleOperationPress("00")} />
+        <Button title="%" isGray onPress={() => handleOperationPress("%")} />
         <Button title="÷" isBlue onPress={() => handleOperationPress("/")} />
       </View>
       <View style={Styles.row}>
@@ -123,7 +123,7 @@ export default function Calculator() {
       <View style={Styles.row}>
         <Button title="." onPress={() => handleNumberPress(".")} />
         <Button title="0" onPress={() => handleNumberPress("0")} />
-        <Button title="⌫" onPress={() => setFirstNumber(firstNumber.slice(0, -1))} />
+        <Button title="DEL." isBlue onPress={() => setFirstNumber(firstNumber.slice(0, -1))} />
         <Button title="=" isBlue onPress={() => getResult()} />
       </View>
     </View>

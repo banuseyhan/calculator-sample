@@ -1,12 +1,11 @@
 import { StyleSheet } from "react-native";
-import { myColor } from "./color";
+import { myColor } from "./color"; 
 
 export const Styles = StyleSheet.create({
     // Button
     btnBlue: {
         width: 72,
         height: 72,
-       
         borderRadius: 24,
         backgroundColor: myColor.blue,
         justifyContent: "center",
@@ -52,6 +51,11 @@ export const Styles = StyleSheet.create({
     row: {
         maxWidth: '100%',
         flexDirection: "row",
+    },
+    es: {
+width: 100,
+height: 72,
+borderRadius: 24,
     },
     viewBottom: {
         position: 'absolute',
